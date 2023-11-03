@@ -1,0 +1,167 @@
+\usepackage{util}
+\usepackage{pgfkeys}
+\usepackage{nameref}
+\usepackage{listings}
+\usepackage{sourcecodepro}
+\usepackage{sourceserifpro}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage[most]{tcolorbox}
+\usepackage{makeidx}
+\tcbuselibrary{listings}
+
+\newtcolorbox[
+    auto counter,
+    number within=section
+]{parameter-box}[2]{
+    title={\thetcbcounter: \texttt{#1}},
+    label={prm:#2},
+    nameref={#1},
+    index={#1},
+    enhanced jigsaw,
+    colback=white,
+    colframe=gray,
+    colbacktitle=gray,
+    left=1pt,
+    right=1pt,
+    top=1pt,
+    bottom=1pt,
+}
+
+\newtcblisting{codeexample}[1][]{%
+    listing style=code,
+    listing only,
+    fonttitle=\bfseries,
+    title={#1},
+    colback=green!5!white,
+    colframe=green!75!black,
+    boxrule=0.5pt,
+    left=0.5pt,
+    right=0.5pt,
+    top=0.2pt,
+    bottom=0.2pt,
+}
+
+\lstdefinestyle{code}{
+    language=c++,
+    basicstyle=\ttfamily\small,
+    columns=fullflexible,
+    keepspaces=true,
+    breaklines=true,
+    breakatwhitespace=true,
+    escapeinside={(*}{*)},
+    commentstyle=\color{gray},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    upquote=true,
+}
+
+\NewExpandableDocumentCommand{\prmset}{+m}{%
+    \pgfkeys{/prm/.cd,#1}%
+}
+
+\NewExpandableDocumentCommand{\prmget}{m}{%
+    \pgfkeysvalueof{/prm/#1}%
+}
+
+\NewExpandableDocumentCommand{\prmlet}{m m}{%
+    \prmset{/prm/#2/.get={#1}}%
+}
+
+\NewExpandableDocumentCommand{\prmlabel}{m}{%
+    \edef\tmp{\noexpand\label{prm:\prmget{@#1}}}\tmp%
+}
+
+\NewExpandableDocumentCommand{\prmref}{m}{%
+    \edef\tmp{\noexpand\nameref{prm:#1}}\tmp%
+}
+
+\NewExpandableDocumentCommand{\prmAsCode}{m}{%
+    \edef\tmp{\noexpand\lstinline§\prmget{@#1}§}\tmp%
+}
+
+\NewExpandableDocumentCommand{\ifpgfkeyequal}{m m +m +m}{%
+    \pgfkeysgetvalue{#1}{\tempa}%
+    \def\tempb{#2}%
+    \ifdefequal{\tempa}{\tempb}{#3}{#4}%
+}
+
+% check if value of key is equal to a given value
+%
+% #1: key
+% #2: value to compare
+% #3: true (T)
+% #4: false (F)
+\NewExpandableDocumentCommand{\PrmKeyEqualTF}{m m +m +m}{\ifpgfkeyequal{/prm/#1}{#2}{#3}{#4}}
+\NewExpandableDocumentCommand{\PrmKeyEqualT}{m +m +m}{\PrmKeyEqualTF{#1}{#2}{#3}{}}
+\NewExpandableDocumentCommand{\PrmKeyEqualF}{m +m +m}{\PrmKeyEqualTF{#1}{#2}{}{#3}}
+
+% check if key is empty
+%
+% #1: key
+% #2: true (T)
+% #3: false (F)
+\NewExpandableDocumentCommand{\PrmKeyEmptyTF}{m +m +m}{%
+    \PrmKeyEqualTF{#1}{}{#2}{%
+        \PrmKeyEqualTF{#1}{\@empty}{#2}{%
+            \PrmKeyEqualTF{#1}{\pgfkeysnovalue}{#2}{%
+                #3%
+            }%
+        }%
+    }%
+}
+\NewExpandableDocumentCommand{\PrmKeyEmptyT}{m +m}{\PrmKeyEmptyTF{#1}{#2}{}}
+\NewExpandableDocumentCommand{\PrmKeyEmptyF}{m +m}{\PrmKeyEmptyTF{#1}{}{#2}}
+
+\prmset{
+    @name/.initial={},
+    @label/.initial={},
+    @default/.initial={},
+    @type/.initial={},
+    @see-also/.initial={},
+    % setter
+    name/.style={@name={#1}, @label={#1}},
+    label/.style={@label={#1}},
+    default/.style={@default={#1}},
+    type/.style={@type={#1}},
+    see-also/.style={@see-also={#1}},
+    % reset 
+    reset/.style={},
+    reset/.append style={name={}},
+    reset/.append style={label={}},
+    reset/.append style={default={}},
+    reset/.append style={type={}},
+    reset/.append style={see-also={}},
+}
+
+
+\NewDocumentEnvironment{parameter}{m}{
+    \prmset{reset,#1}%
+    % \edef\tmp{\noexpand\subsubsection{\prmget{@name}}}\tmp%
+    % \prmlabel{label}%
+    \begin{parameter-box}{\prmget{@name}}{\prmget{@label}}
+        
+    \begin{tabularx}{\linewidth}{@{}lXlX@{}}
+        % \toprule
+        Default & 
+            \PrmKeyEmptyTF{@default}{--}{
+                \prmAsCode{default}
+            } &
+        Type & 
+            \PrmKeyEmptyTF{@type}{--}{
+                \prmAsCode{type}
+            } \\
+        See also & \multicolumn{3}{X@{}}{
+            \PrmKeyEmptyTF{@see-also}{--}{
+                \mapjoinlist[,]{\prmget{@see-also}}{\prmref{####1}}{,\ }
+            } 
+        }
+        % \bottomrule
+    \end{tabularx}
+    \tcblower
+}{
+    \end{parameter-box}
+}

@@ -1,0 +1,49 @@
+\usepackage{xstring}
+
+
+% to make underscores work in parameter names
+\begingroup\lccode`~=`_ \lowercase{\endgroup\let~}_
+\catcode`_=12
+
+% -------------------------------- List Parser ------------------------------- %
+% Example: \maplist[;]{foo; bar; baz}{#1x~} -> results in foox barx bazx
+\ExplSyntaxOn
+
+\seq_new:N \l__prm_data_seq
+\cs_generate_variant:Nn \seq_set_split:Nnn { Nnf }
+
+% \NewDocumentCommand{\maplist}{O{,} m m}
+% {
+%     % #1 the delimiter
+%     % #2 is the list
+%     % #3 is the code to use
+%     \seq_set_split:Nnf \l__prm_data_seq { #1 } { #2 }
+%     \seq_map_inline:Nn \l__prm_data_seq { #3 }
+% }
+
+\cs_generate_variant:Nn \seq_set_split:Nnn { Nnf }
+
+
+% \NewDocumentCommand{\joinlist}{O{,} m O{#4} m O{#4}}
+% {
+%     % #1 the list delimiter, 
+%     % #2 the list, 
+%     % #3 the code between two items
+%     % #4 the code between more than two items
+%     % #5 the code between the last two items
+%     \seq_set_split:Nnf \l__prm_data_seq { #1 } { #2 }
+%     \seq_use:Nnnn \l__prm_data_seq { #3 } { #4 } { #5 }
+% }
+
+\NewDocumentCommand{\mapjoinlist}{O{,} m m O{#5} m O{#5}}{
+    % #1 the list delimiter, 
+    % #2 is the list
+    % #3 is the code to use
+    % #4 the code between two items
+    % #5 the code between more than two items
+    % #6 the code between the last two items
+    \seq_set_split:Nnf \l__prm_data_seq { #1 } { #2 }
+    \seq_set_map:NNn \l__prm_data_seq \l__prm_data_seq { #3 }
+    \seq_use:Nnnn \l__prm_data_seq { #4 } { #5 } { #6 }
+}
+\ExplSyntaxOff
