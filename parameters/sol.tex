@@ -1,0 +1,1064 @@
+\subsection{solver}
+
+% --- SOL_TPL_Type --- %
+\begin{parameter}{
+    name    = {SOL_TPL_Type},
+    default = {(uint)( sol::MapType::Epetra )},
+}
+- no description -
+\end{parameter}
+
+% --- SOL_load_sol_vec_data_group --- %
+\begin{parameter}{
+    name    = {SOL_load_sol_vec_data_group},
+    default = {std::string( "LHS" )},
+}
+- no description -
+\end{parameter}
+
+% --- SOL_load_sol_vec_from_file --- %
+\begin{parameter}{
+    name    = {SOL_load_sol_vec_from_file},
+    default = {std::string( "" )},
+}
+- no description -
+\end{parameter}
+
+% --- SOL_load_sol_vec_num_vec --- %
+\begin{parameter}{
+    name    = {SOL_load_sol_vec_num_vec},
+    default = {(sint)1},
+}
+- no description -
+\end{parameter}
+
+% --- SOL_save_final_adjoint_vec_to_file --- %
+\begin{parameter}{
+    name    = {SOL_save_final_adjoint_vec_to_file},
+    default = {std::string( "" )},
+}
+- no description -
+\end{parameter}
+
+% --- SOL_save_final_sol_vec_to_file --- %
+\begin{parameter}{
+    name    = {SOL_save_final_sol_vec_to_file},
+    default = {std::string( "" )},
+}
+- no description -
+\end{parameter}
+
+% --- SOL_save_operator_to_matlab --- %
+\begin{parameter}{
+    name    = {SOL_save_operator_to_matlab},
+    default = {std::string( "" )},
+}
+- no description -
+\end{parameter}
+
+% --- TSA_Initial_Sol_Vec --- %
+\begin{parameter}{
+    name    = {TSA_Initial_Sol_Vec},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- TSA_Save_Sol_Vecs_to_file --- %
+\begin{parameter}{
+    name    = {TSA_Save_Sol_Vecs_to_file},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+\subsection{ifpack}
+
+% --- Preconditioner_Implementation --- %
+\begin{parameter}{
+    name    = {Preconditioner_Implementation},
+    default = {(uint)( tType )},
+}
+- no description -
+\end{parameter}
+
+% --- amesos: solver type --- %
+\begin{parameter}{
+    name    = {amesos: solver type},
+    default = {"Amesos_Klu"},
+}
+- no description -
+\end{parameter}
+
+% --- fact: absolute threshold --- %
+\begin{parameter}{
+    name    = {fact: absolute threshold},
+    default = {0.0},
+}
+- no description -
+\end{parameter}
+
+% --- fact: drop tolerance --- %
+\begin{parameter}{
+    name    = {fact: drop tolerance},
+    default = {1e-9},
+}
+- no description -
+\end{parameter}
+
+% --- fact: ict level-of-fill --- %
+\begin{parameter}{
+    name    = {fact: ict level-of-fill},
+    default = {1.0},
+}
+- no description -
+\end{parameter}
+
+% --- fact: ilut level-of-fill --- %
+\begin{parameter}{
+    name    = {fact: ilut level-of-fill},
+    default = {1.0},
+}
+- no description -
+\end{parameter}
+
+% --- fact: level-of-fill --- %
+\begin{parameter}{
+    name    = {fact: level-of-fill},
+    default = {1},
+}
+- no description -
+\end{parameter}
+
+% --- fact: relative threshold --- %
+\begin{parameter}{
+    name    = {fact: relative threshold},
+    default = {1.0},
+}
+- no description -
+\end{parameter}
+
+% --- fact: relax value --- %
+\begin{parameter}{
+    name    = {fact: relax value},
+    default = {0.0},
+}
+- no description -
+\end{parameter}
+
+% --- fact: sparskit: alph --- %
+\begin{parameter}{
+    name    = {fact: sparskit: alph},
+    default = {0.0},
+}
+- no description -
+\end{parameter}
+
+% --- fact: sparskit: droptol --- %
+\begin{parameter}{
+    name    = {fact: sparskit: droptol},
+    default = {0.0},
+}
+- no description -
+\end{parameter}
+
+% --- fact: sparskit: lfil --- %
+\begin{parameter}{
+    name    = {fact: sparskit: lfil},
+    default = {0.0},
+}
+- no description -
+\end{parameter}
+
+% --- fact: sparskit: mbloc --- %
+\begin{parameter}{
+    name    = {fact: sparskit: mbloc},
+    default = {0.0},
+}
+- no description -
+\end{parameter}
+
+% --- fact: sparskit: permtol --- %
+\begin{parameter}{
+    name    = {fact: sparskit: permtol},
+    default = {0.0},
+}
+- no description -
+\end{parameter}
+
+% --- fact: sparskit: tol --- %
+\begin{parameter}{
+    name    = {fact: sparskit: tol},
+    default = {0.0},
+}
+- no description -
+\end{parameter}
+
+% --- fact: sparskit: type --- %
+\begin{parameter}{
+    name    = {fact: sparskit: type},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- ifpack_prec_type --- %
+\begin{parameter}{
+    name    = {ifpack_prec_type},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- krylov: block size --- %
+\begin{parameter}{
+    name    = {krylov: block size},
+    default = {0},
+}
+- no description -
+\end{parameter}
+
+% --- krylov: damping parameter --- %
+\begin{parameter}{
+    name    = {krylov: damping parameter},
+    default = {0.0},
+}
+- no description -
+\end{parameter}
+
+% --- krylov: iterations --- %
+\begin{parameter}{
+    name    = {krylov: iterations},
+    default = {0},
+}
+- no description -
+\end{parameter}
+
+% --- krylov: number of sweeps --- %
+\begin{parameter}{
+    name    = {krylov: number of sweeps},
+    default = {0},
+}
+- no description -
+\end{parameter}
+
+% --- krylov: preconditioner --- %
+\begin{parameter}{
+    name    = {krylov: preconditioner},
+    default = {0},
+}
+- no description -
+\end{parameter}
+
+% --- krylov: solver --- %
+\begin{parameter}{
+    name    = {krylov: solver},
+    default = {0},
+}
+- no description -
+\end{parameter}
+
+% --- krylov: tolerance --- %
+\begin{parameter}{
+    name    = {krylov: tolerance},
+    default = {0.0},
+}
+- no description -
+\end{parameter}
+
+% --- krylov: zero starting solution --- %
+\begin{parameter}{
+    name    = {krylov: zero starting solution},
+    default = {0},
+}
+- no description -
+\end{parameter}
+
+% --- ml_prec_type --- %
+\begin{parameter}{
+    name    = {ml_prec_type},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- overlap-level --- %
+\begin{parameter}{
+    name    = {overlap-level},
+    default = {1},
+}
+- no description -
+\end{parameter}
+
+% --- partitioner: local parts --- %
+\begin{parameter}{
+    name    = {partitioner: local parts},
+    default = {1},
+}
+- no description -
+\end{parameter}
+
+% --- partitioner: overlap --- %
+\begin{parameter}{
+    name    = {partitioner: overlap},
+    default = {0},
+}
+- no description -
+\end{parameter}
+
+% --- partitioner: print level --- %
+\begin{parameter}{
+    name    = {partitioner: print level},
+    default = {0},
+}
+- no description -
+\end{parameter}
+
+% --- partitioner: type --- %
+\begin{parameter}{
+    name    = {partitioner: type},
+    default = {"greedy"},
+}
+- no description -
+\end{parameter}
+
+% --- partitioner: use symmetric graph --- %
+\begin{parameter}{
+    name    = {partitioner: use symmetric graph},
+    default = {true},
+}
+- no description -
+\end{parameter}
+
+% --- prec_reuse --- %
+\begin{parameter}{
+    name    = {prec_reuse},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- relaxation: backward mode --- %
+\begin{parameter}{
+    name    = {relaxation: backward mode},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- relaxation: damping factor --- %
+\begin{parameter}{
+    name    = {relaxation: damping factor},
+    default = {1.0},
+}
+- no description -
+\end{parameter}
+
+% --- relaxation: l1 eta --- %
+\begin{parameter}{
+    name    = {relaxation: l1 eta},
+    default = {1.5},
+}
+- no description -
+\end{parameter}
+
+% --- relaxation: min diagonal value --- %
+\begin{parameter}{
+    name    = {relaxation: min diagonal value},
+    default = {0.0},
+}
+- no description -
+\end{parameter}
+
+% --- relaxation: sweeps --- %
+\begin{parameter}{
+    name    = {relaxation: sweeps},
+    default = {1},
+}
+- no description -
+\end{parameter}
+
+% --- relaxation: type --- %
+\begin{parameter}{
+    name    = {relaxation: type},
+    default = {"Jacobi"},
+}
+- no description -
+\end{parameter}
+
+% --- relaxation: use l1 --- %
+\begin{parameter}{
+    name    = {relaxation: use l1},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- relaxation: zero starting solution --- %
+\begin{parameter}{
+    name    = {relaxation: zero starting solution},
+    default = {true},
+}
+- no description -
+\end{parameter}
+
+% --- schwarz: combine mode --- %
+\begin{parameter}{
+    name    = {schwarz: combine mode},
+    default = {"Zero"},
+}
+- no description -
+\end{parameter}
+
+% --- schwarz: compute condest --- %
+\begin{parameter}{
+    name    = {schwarz: compute condest},
+    default = {true},
+}
+- no description -
+\end{parameter}
+
+% --- schwarz: filter singletons --- %
+\begin{parameter}{
+    name    = {schwarz: filter singletons},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- schwarz: reordering type --- %
+\begin{parameter}{
+    name    = {schwarz: reordering type},
+    default = {"rcm"},
+}
+- no description -
+\end{parameter}
+
+\subsection{ml}
+
+% --- ML output --- %
+\begin{parameter}{
+    name    = {ML output},
+    default = {0},
+}
+- no description -
+\end{parameter}
+
+% --- ML print final list --- %
+\begin{parameter}{
+    name    = {ML print final list},
+    default = {-2},
+}
+- no description -
+\end{parameter}
+
+% --- ML print initial list --- %
+\begin{parameter}{
+    name    = {ML print initial list},
+    default = {-2},
+}
+- no description -
+\end{parameter}
+
+% --- PDE equations --- %
+\begin{parameter}{
+    name    = {PDE equations},
+    default = {1},
+}
+- no description -
+\end{parameter}
+
+% --- Preconditioner_Implementation --- %
+\begin{parameter}{
+    name    = {Preconditioner_Implementation},
+    default = {(uint)( tType )},
+}
+- no description -
+\end{parameter}
+
+% --- aggregation: damping factor --- %
+\begin{parameter}{
+    name    = {aggregation: damping factor},
+    default = {1.3333333333333333},
+}
+- no description -
+\end{parameter}
+
+% --- aggregation: global aggregates --- %
+\begin{parameter}{
+    name    = {aggregation: global aggregates},
+    default = {1},
+}
+- no description -
+\end{parameter}
+
+% --- aggregation: local aggregates --- %
+\begin{parameter}{
+    name    = {aggregation: local aggregates},
+    default = {1},
+}
+- no description -
+\end{parameter}
+
+% --- aggregation: nodes per aggregate --- %
+\begin{parameter}{
+    name    = {aggregation: nodes per aggregate},
+    default = {512},
+}
+- no description -
+\end{parameter}
+
+% --- aggregation: smoothing sweeps --- %
+\begin{parameter}{
+    name    = {aggregation: smoothing sweeps},
+    default = {1},
+}
+- no description -
+\end{parameter}
+
+% --- aggregation: symmetrize --- %
+\begin{parameter}{
+    name    = {aggregation: symmetrize},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- aggregation: threshold --- %
+\begin{parameter}{
+    name    = {aggregation: threshold},
+    default = {0.0},
+}
+- no description -
+\end{parameter}
+
+% --- aggregation: type --- %
+\begin{parameter}{
+    name    = {aggregation: type},
+    default = {"Uncoupled"},
+}
+- no description -
+\end{parameter}
+
+% --- aggregation: use tentative restriction --- %
+\begin{parameter}{
+    name    = {aggregation: use tentative restriction},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- analyze memory --- %
+\begin{parameter}{
+    name    = {analyze memory},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- coarse: damping factor --- %
+\begin{parameter}{
+    name    = {coarse: damping factor},
+    default = {1.0},
+}
+- no description -
+\end{parameter}
+
+% --- coarse: max size --- %
+\begin{parameter}{
+    name    = {coarse: max size},
+    default = {128},
+}
+- no description -
+\end{parameter}
+
+% --- coarse: pre or post --- %
+\begin{parameter}{
+    name    = {coarse: pre or post},
+    default = {"post"},
+}
+- no description -
+\end{parameter}
+
+% --- coarse: sweeps --- %
+\begin{parameter}{
+    name    = {coarse: sweeps},
+    default = {1},
+}
+- no description -
+\end{parameter}
+
+% --- coarse: type --- %
+\begin{parameter}{
+    name    = {coarse: type},
+    default = {"Amesos-KLU"},
+}
+- no description -
+\end{parameter}
+
+% --- cycle applications --- %
+\begin{parameter}{
+    name    = {cycle applications},
+    default = {1},
+}
+- no description -
+\end{parameter}
+
+% --- eigen-analysis: iterations --- %
+\begin{parameter}{
+    name    = {eigen-analysis: iterations},
+    default = {10},
+}
+- no description -
+\end{parameter}
+
+% --- eigen-analysis: type --- %
+\begin{parameter}{
+    name    = {eigen-analysis: type},
+    default = {"cg"},
+}
+- no description -
+\end{parameter}
+
+% --- energy minimization: cheap --- %
+\begin{parameter}{
+    name    = {energy minimization: cheap},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- energy minimization: droptol --- %
+\begin{parameter}{
+    name    = {energy minimization: droptol},
+    default = {0.0},
+}
+- no description -
+\end{parameter}
+
+% --- energy minimization: enable --- %
+\begin{parameter}{
+    name    = {energy minimization: enable},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- energy minimization: type --- %
+\begin{parameter}{
+    name    = {energy minimization: type},
+    default = {2},
+}
+- no description -
+\end{parameter}
+
+% --- ifpack_prec_type --- %
+\begin{parameter}{
+    name    = {ifpack_prec_type},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- increasing or decreasing --- %
+\begin{parameter}{
+    name    = {increasing or decreasing},
+    default = {"increasing"},
+}
+- no description -
+\end{parameter}
+
+% --- max levels --- %
+\begin{parameter}{
+    name    = {max levels},
+    default = {10},
+}
+- no description -
+\end{parameter}
+
+% --- ml_prec_type --- %
+\begin{parameter}{
+    name    = {ml_prec_type},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- null space: add default vectors --- %
+\begin{parameter}{
+    name    = {null space: add default vectors},
+    default = {true},
+}
+- no description -
+\end{parameter}
+
+% --- null space: dimension --- %
+\begin{parameter}{
+    name    = {null space: dimension},
+    default = {1},
+}
+- no description -
+\end{parameter}
+
+% --- null space: type --- %
+\begin{parameter}{
+    name    = {null space: type},
+    default = {"default vectors"},
+}
+- no description -
+\end{parameter}
+
+% --- null space: vectors --- %
+\begin{parameter}{
+    name    = {null space: vectors},
+    default = {NULL},
+}
+- no description -
+\end{parameter}
+
+% --- null space: vectors to compute --- %
+\begin{parameter}{
+    name    = {null space: vectors to compute},
+    default = {2},
+}
+- no description -
+\end{parameter}
+
+% --- prec type --- %
+\begin{parameter}{
+    name    = {prec type},
+    default = {"MGV"},
+}
+- no description -
+\end{parameter}
+
+% --- prec_reuse --- %
+\begin{parameter}{
+    name    = {prec_reuse},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- print unused --- %
+\begin{parameter}{
+    name    = {print unused},
+    default = {0},
+}
+- no description -
+\end{parameter}
+
+% --- repartition: enable --- %
+\begin{parameter}{
+    name    = {repartition: enable},
+    default = {0},
+}
+- no description -
+\end{parameter}
+
+% --- repartition: partitioner --- %
+\begin{parameter}{
+    name    = {repartition: partitioner},
+    default = {"Zoltan"},
+}
+- no description -
+\end{parameter}
+
+% --- smoother: Aztec as solver --- %
+\begin{parameter}{
+    name    = {smoother: Aztec as solver},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- smoother: damping factor --- %
+\begin{parameter}{
+    name    = {smoother: damping factor},
+    default = {1.0},
+}
+- no description -
+\end{parameter}
+
+% --- smoother: ifpack absolute threshold --- %
+\begin{parameter}{
+    name    = {smoother: ifpack absolute threshold},
+    default = {0.0},
+}
+- no description -
+\end{parameter}
+
+% --- smoother: ifpack level-of-fill --- %
+\begin{parameter}{
+    name    = {smoother: ifpack level-of-fill},
+    default = {0.0},
+}
+- no description -
+\end{parameter}
+
+% --- smoother: ifpack overlap --- %
+\begin{parameter}{
+    name    = {smoother: ifpack overlap},
+    default = {0},
+}
+- no description -
+\end{parameter}
+
+% --- smoother: ifpack relative threshold --- %
+\begin{parameter}{
+    name    = {smoother: ifpack relative threshold},
+    default = {0.0},
+}
+- no description -
+\end{parameter}
+
+% --- smoother: pre or post --- %
+\begin{parameter}{
+    name    = {smoother: pre or post},
+    default = {"both"},
+}
+- no description -
+\end{parameter}
+
+% --- smoother: sweeps --- %
+\begin{parameter}{
+    name    = {smoother: sweeps},
+    default = {2},
+}
+- no description -
+\end{parameter}
+
+% --- smoother: type --- %
+\begin{parameter}{
+    name    = {smoother: type},
+    default = {"Chebyshev"},
+}
+- no description -
+\end{parameter}
+
+% --- viz: enable --- %
+\begin{parameter}{
+    name    = {viz: enable},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- viz: output format --- %
+\begin{parameter}{
+    name    = {viz: output format},
+    default = {"vtk"},
+}
+- no description -
+\end{parameter}
+
+% --- viz: print starting solution --- %
+\begin{parameter}{
+    name    = {viz: print starting solution},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+\subsection{eigen}
+
+% --- Amesos_Direct_Solver_Type --- %
+\begin{parameter}{
+    name    = {Amesos_Direct_Solver_Type},
+    default = {"Amesos_Klu"},
+}
+- no description -
+\end{parameter}
+
+% --- Block_Size --- %
+\begin{parameter}{
+    name    = {Block_Size},
+    default = {INT_MAX},
+}
+- no description -
+\end{parameter}
+
+% --- Convergence_Tolerance --- %
+\begin{parameter}{
+    name    = {Convergence_Tolerance},
+    default = {1e-013},
+}
+- no description -
+\end{parameter}
+
+% --- Eigen_Algorithm --- %
+\begin{parameter}{
+    name    = {Eigen_Algorithm},
+    default = {std::string( "" )},
+}
+- no description -
+\end{parameter}
+
+% --- Initial_Guess --- %
+\begin{parameter}{
+    name    = {Initial_Guess},
+    default = {INT_MAX},
+}
+- no description -
+\end{parameter}
+
+% --- MaxRestarts --- %
+\begin{parameter}{
+    name    = {MaxRestarts},
+    default = {INT_MAX},
+}
+- no description -
+\end{parameter}
+
+% --- MaxSubSpaceDims --- %
+\begin{parameter}{
+    name    = {MaxSubSpaceDims},
+    default = {INT_MAX},
+}
+- no description -
+\end{parameter}
+
+% --- NumFreeDofs --- %
+\begin{parameter}{
+    name    = {NumFreeDofs},
+    default = {INT_MAX},
+}
+- no description -
+\end{parameter}
+
+% --- Num_Blocks --- %
+\begin{parameter}{
+    name    = {Num_Blocks},
+    default = {INT_MAX},
+}
+- no description -
+\end{parameter}
+
+% --- Num_Eig_Vals --- %
+\begin{parameter}{
+    name    = {Num_Eig_Vals},
+    default = {INT_MAX},
+}
+- no description -
+\end{parameter}
+
+% --- Relative_Convergence_Tolerance --- %
+\begin{parameter}{
+    name    = {Relative_Convergence_Tolerance},
+    default = {true},
+}
+- no description -
+\end{parameter}
+
+% --- Solver_Implementation --- %
+\begin{parameter}{
+    name    = {Solver_Implementation},
+    default = {static_cast< uint >( tType )},
+}
+- no description -
+\end{parameter}
+
+% --- Update_Flag --- %
+\begin{parameter}{
+    name    = {Update_Flag},
+    default = {true},
+}
+- no description -
+\end{parameter}
+
+% --- Verbosity --- %
+\begin{parameter}{
+    name    = {Verbosity},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- Which --- %
+\begin{parameter}{
+    name    = {Which},
+    default = {"SM"},
+}
+- no description -
+\end{parameter}
+
+\subsection{linear}
+
+\subsection{nonlinear}
+
+\subsection{time}
+
+% --- TSA_DofTypes --- %
+\begin{parameter}{
+    name    = {TSA_DofTypes},
+    default = {"UNDEFINED"},
+}
+- no description -
+\end{parameter}
+
+% --- TSA_Initialize_Sol_Vec --- %
+\begin{parameter}{
+    name    = {TSA_Initialize_Sol_Vec},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- TSA_Max_Time_Solver_Restarts --- %
+\begin{parameter}{
+    name    = {TSA_Max_Time_Solver_Restarts},
+    default = {0},
+}
+- no description -
+\end{parameter}
+
+% --- TSA_Output_Criteria --- %
+\begin{parameter}{
+    name    = {TSA_Output_Criteria},
+    default = {"Default_Output_Criterion"},
+}
+- no description -
+\end{parameter}
+
+% --- TSA_Output_Indices --- %
+\begin{parameter}{
+    name    = {TSA_Output_Indices},
+    default = {"0"},
+}
+- no description -
+\end{parameter}
+
+% --- TSA_Solver_algorithms --- %
+\begin{parameter}{
+    name    = {TSA_Solver_algorithms},
+    default = {"0"},
+}
+- no description -
+\end{parameter}
+
+% --- TSA_TPL_Type --- %
+\begin{parameter}{
+    name    = {TSA_TPL_Type},
+    default = {(uint)( sol::MapType::Epetra )},
+}
+- no description -
+\end{parameter}
+
+% --- TSA_time_level_per_type --- %
+\begin{parameter}{
+    name    = {TSA_time_level_per_type},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+\subsection{preconditioner}
+
+% --- Preconditioner_Implementation --- %
+\begin{parameter}{
+    name    = {Preconditioner_Implementation},
+    default = {(uint)( tType )},
+}
+- no description -
+\end{parameter}
+

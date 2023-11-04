@@ -1,0 +1,363 @@
+\subsection{HMR Parameter-List}
+
+% --- adaptive_refinement_level --- %
+\begin{parameter}{
+    name    = {adaptive_refinement_level},
+    default = {0},
+}
+- no description -
+\end{parameter}
+
+% --- additional_lagrange_refinement --- %
+\begin{parameter}{
+    name    = {additional_lagrange_refinement},
+    default = {0},
+}
+- no description -
+\end{parameter}
+
+% --- basis_function_vtk_file --- %
+\begin{parameter}{
+    name    = {basis_function_vtk_file},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- bspline_orders --- %
+\begin{parameter}{
+    name    = {bspline_orders},
+    default = {"1"},
+    type    = {vector},
+    usage   = {once},
+    see-also = {bspline_pattern},
+}
+Orders of the B-Spline meshes in the same order as described in \prmref{prm:bspline_pattern}.
+If you use multiple meshes, separate the orders with a comma.
+E.g. |"2,1"| for a quadratic and a linear mesh on the patterns that are specified in \prmref{prm:bspline_pattern}.
+\end{parameter}
+
+% --- bspline_pattern --- %
+\begin{parameter}{
+    name    = {bspline_pattern},
+    default = {"0"},
+    type    = {vector},
+    usage   = {once},
+    see-also = {bspline_orders},
+}
+Specify the patterns for the B-Spline meshes.
+If you use multiple meshes, separate the patterns with a comma.
+The patterns from \prmref{prm:lagrange_pattern} can be reused.
+Use in conjunction with \prmref{prm:bspline_orders}.
+The first index will be referred to B-Spline pattern with index 0, the second to the pattern with index 1, etc.
+\end{parameter}
+
+% --- domain_dimensions --- %
+\begin{parameter}{
+    name    = {domain_dimensions},
+    default = {"1, 1"},
+}
+Width, height and depth of domain (without aura)
+\end{parameter}
+
+% --- domain_offset --- %
+\begin{parameter}{
+    name    = {domain_offset},
+    type    = {vector},
+    usage   = {once},
+    default = {"0, 0"},
+}
+Offset from the origin.
+For a 3D problem, use |"0, 0, 0"|.
+\end{parameter}
+
+% --- domain_sidesets --- %
+\begin{parameter}{
+    name    = {domain_sidesets},
+    default = {""},
+}
+Set all side-set names that should be built for the domain.
+Numbering of side-sets follows the convention of \cite{noauthor_exodus_nodate}.
+To obtain all side-sets, use |"1, 2, 3, 4"| in a 2D problem and |"1, 2, 3, 4, 5, 6"| in a 3D problem.
+\end{parameter}
+
+% --- initial_refinement --- %
+\begin{parameter}{
+    name    = {initial_refinement},
+    default = {"0"},
+    type    = {scalar},
+    usage   = {once},
+    see-also = {initial_refinement_pattern},
+}
+Initial refinement level.
+\end{parameter}
+
+% --- initial_refinement_pattern --- %
+\begin{parameter}{
+    name    = {initial_refinement_pattern},
+    type    = {scalar},
+    usage   = {once},
+    default = {"0"},
+    see-also = {initial_refinement},
+}
+\todo{What does it do?}
+\end{parameter}
+
+% --- lagrange_input_meshes --- %
+\begin{parameter}{
+    name    = {lagrange_input_meshes},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- lagrange_orders --- %
+\begin{parameter}{
+    name    = {lagrange_orders},
+    type    = {scalar},
+    usage   = {once},
+    default = {"1"},
+}
+Order of Lagrange elements.
+Use |"1"| for linear elements, |"2"| for quadratic elements, etc.
+\end{parameter}
+
+% --- lagrange_output_mesh_names --- %
+\begin{parameter}{
+    name    = {lagrange_output_mesh_names},
+    usage   = {once},
+    type    = {vector},
+    default = {""},
+}
+Lagrange Meshes that are used as output meshes.
+This is usually set to |"0"|.
+\todo{What does this mean?}
+\end{parameter}
+
+% --- lagrange_output_meshes --- %
+\begin{parameter}{
+    name    = {lagrange_output_meshes},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- lagrange_pattern --- %
+\begin{parameter}{
+    name    = {lagrange_pattern},
+    type    = {vector}
+    default = {"0"},
+}
+Set the Lagrange pattern (see \ref{sec:hmr:patterns}).
+There will always be at least one Lagrange mesh.
+\todo{Check!}
+\end{parameter}
+
+% --- lagrange_to_bspline --- %
+\begin{parameter}{
+    name    = {lagrange_to_bspline},
+    default = {"0"},
+}
+Defines which B-Spline mesh is associated with which Lagrange mesh.
+The first index refers to the B-Spline mesh with index 0 (which is defined on a pattern as specified in \prmref{prm:bspline_pattern}), the second to the B-Spline mesh with index 1, etc.
+All indices are automatically associated with the Lagrange mesh with index 0.
+If you have multiple Lagrange meshes, you can use |;| to separate the respective relations to the next Lagrange-mesh index.
+\end{parameter}
+
+% --- max_refinement_level --- %
+\begin{parameter}{
+    name    = {max_refinement_level},
+    default = {-1},
+}
+- no description -
+\end{parameter}
+
+% --- number_of_elements_per_dimension --- %
+\begin{parameter}{
+    name    = {number_of_elements_per_dimension},
+    default = {"2, 2"},
+    type    = {vector},
+    usage   = {once},
+}
+Number of elements per direction in overall mesh, without aura 2D or 3D is determined by length of this vector.
+\end{parameter}
+
+% --- processor_decomposition_method --- %
+\begin{parameter}{
+    name    = {processor_decomposition_method},
+    default = {1},
+}
+- no description -
+\end{parameter}
+
+% --- processor_dimensions --- %
+\begin{parameter}{
+    name    = {processor_dimensions},
+    default = {"2, 2"},
+}
+- no description -
+\end{parameter}
+
+% --- refinement_buffer --- %
+\begin{parameter}{
+    name    = {refinement_buffer},
+    type    = {scalar},
+    usage   = {once},
+    default = {0},
+    see-also = {staircase_buffer},
+}
+Size of the refinement buffer.
+\todo{What is that?}
+\end{parameter}
+
+% --- refinement_function_names --- %
+\begin{parameter}{
+    name    = {refinement_function_names},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- renumber_lagrange_nodes --- %
+\begin{parameter}{
+    name    = {renumber_lagrange_nodes},
+    default = {0},
+}
+- no description -
+\end{parameter}
+
+% --- restart_refinement_pattern_file --- %
+\begin{parameter}{
+    name    = {restart_refinement_pattern_file},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- severity_level --- %
+\begin{parameter}{
+    name    = {severity_level},
+    type    = {scalar},
+    usage   = {once},
+    default = {0},
+}
+Set the severity level for the \moris output.
+\end{parameter}
+
+% --- staircase_buffer --- %
+\begin{parameter}{
+    name    = {staircase_buffer},
+    type    = {scalar},
+    usage   = {once},
+    default = {0},
+    see-also = {refinement_buffer},
+}
+Size of the staircase buffer. 
+Often set to the same value as \prmref{prm:refinement_buffer}.
+\todo{What is that?}
+\end{parameter}
+
+% --- truncate_bsplines --- %
+\begin{parameter}{
+    name    = {truncate_bsplines},
+    type    = {boolean},
+    usage   = {once},
+    default = {1},
+}
+Whether to truncate the B-Spline meshes or not.
+\end{parameter}
+
+% --- union_pattern --- %
+\begin{parameter}{
+    name    = {union_pattern},
+    default = {6},
+}
+- no description -
+\end{parameter}
+
+% --- use_advanced_T_matrix_scheme --- %
+\begin{parameter}{
+    name    = {use_advanced_T_matrix_scheme},
+    default = {0},
+}
+- no description -
+\end{parameter}
+
+% --- use_multigrid --- %
+\begin{parameter}{
+    name    = {use_multigrid},
+    type    = {boolean},
+    usage   = {once},
+    default = {0},
+}
+Boolean flag for multigrid.
+\todo{What is that?}
+\end{parameter}
+
+% --- use_number_aura --- %
+\begin{parameter}{
+    name    = {use_number_aura},
+    type    = {boolean},
+    usage   = {once},
+    default = {1},
+}
+Boolean flag for numbering of aura.
+\todo{What is that?}
+\end{parameter}
+
+% --- use_refine_low_level_elements --- %
+\begin{parameter}{
+    name    = {use_refine_low_level_elements},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- use_refinement_interrelation --- %
+\begin{parameter}{
+    name    = {use_refinement_interrelation},
+    default = {0},
+}
+- no description -
+\end{parameter}
+
+% --- working_pattern --- %
+\begin{parameter}{
+    name    = {working_pattern},
+    default = {7},
+}
+- no description -
+\end{parameter}
+
+% --- write_background_mesh --- %
+\begin{parameter}{
+    name    = {write_background_mesh},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- write_lagrange_output_mesh --- %
+\begin{parameter}{
+    name    = {write_lagrange_output_mesh},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- write_lagrange_output_mesh_to_exodus --- %
+\begin{parameter}{
+    name    = {write_lagrange_output_mesh_to_exodus},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- write_refinement_pattern_file --- %
+\begin{parameter}{
+    name    = {write_refinement_pattern_file},
+    default = {false},
+}
+- no description -
+\end{parameter}
+

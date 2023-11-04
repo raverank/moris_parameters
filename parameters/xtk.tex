@@ -1,0 +1,490 @@
+\subsection{xtk}
+
+% --- MPC_output_file --- %
+\begin{parameter}{
+    name    = {MPC_output_file},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- activate_basis_agglomeration --- %
+\begin{parameter}{
+    name    = {activate_basis_agglomeration},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- activate_cell_agglomeration --- %
+\begin{parameter}{
+    name    = {activate_cell_agglomeration},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- basis_rank --- %
+\begin{parameter}{
+    name    = {basis_rank},
+    default = {"node"},
+}
+- no description -
+\end{parameter}
+
+% --- bb_epsilon --- %
+\begin{parameter}{
+    name    = {bb_epsilon},
+    default = {0.1},
+}
+- no description -
+\end{parameter}
+
+% --- cleanup_cut_mesh --- %
+\begin{parameter}{
+    name    = {cleanup_cut_mesh},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- contact_sandbox --- %
+\begin{parameter}{
+    name    = {contact_sandbox},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- deactivate_all_but_blocks --- %
+\begin{parameter}{
+    name    = {deactivate_all_but_blocks},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- deactivate_all_but_side_sets --- %
+\begin{parameter}{
+    name    = {deactivate_all_but_side_sets},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- deactivate_empty_sets --- %
+\begin{parameter}{
+    name    = {deactivate_empty_sets},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- decompose --- %
+\begin{parameter}{
+    name    = {decompose},
+    default = {true},
+}
+- no description -
+\end{parameter}
+
+% --- decomposition_type --- %
+\begin{parameter}{
+    name    = {decomposition_type},
+    default = {"conformal"},
+}
+- no description -
+\end{parameter}
+
+% --- delete_xtk_after_generation --- %
+\begin{parameter}{
+    name    = {delete_xtk_after_generation},
+    default = {true},
+}
+- no description -
+\end{parameter}
+
+% --- diagnostics --- %
+\begin{parameter}{
+    name    = {diagnostics},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- diagnostics_id --- %
+\begin{parameter}{
+    name    = {diagnostics_id},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- diagnostics_path --- %
+\begin{parameter}{
+    name    = {diagnostics_path},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- elemental_T_matrix_output_file --- %
+\begin{parameter}{
+    name    = {elemental_T_matrix_output_file},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- enrich --- %
+\begin{parameter}{
+    name    = {enrich},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- enrich_mesh_indices --- %
+\begin{parameter}{
+    name    = {enrich_mesh_indices},
+    default = {"0"},
+}
+- no description -
+\end{parameter}
+
+% --- exodus_output_XTK_ig_mesh --- %
+\begin{parameter}{
+    name    = {exodus_output_XTK_ig_mesh},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- exodus_output_XTK_ip_mesh --- %
+\begin{parameter}{
+    name    = {exodus_output_XTK_ip_mesh},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- ghost_stab --- %
+\begin{parameter}{
+    name    = {ghost_stab},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- global_T_matrix_output_file --- %
+\begin{parameter}{
+    name    = {global_T_matrix_output_file},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- high_to_low_dbl_side_sets --- %
+\begin{parameter}{
+    name    = {high_to_low_dbl_side_sets},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- identify_hanging_nodes --- %
+\begin{parameter}{
+    name    = {identify_hanging_nodes},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- ig_element_order --- %
+\begin{parameter}{
+    name    = {ig_element_order},
+    default = {moris::uint( 1 )},
+}
+- no description -
+\end{parameter}
+
+% --- keep_all_opt_iters --- %
+\begin{parameter}{
+    name    = {keep_all_opt_iters},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- low_memory --- %
+\begin{parameter}{
+    name    = {low_memory},
+    default = {true},
+}
+- no description -
+\end{parameter}
+
+% --- multigrid --- %
+\begin{parameter}{
+    name    = {multigrid},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- octree_refinement_level --- %
+\begin{parameter}{
+    name    = {octree_refinement_level},
+    default = {"-1"},
+}
+- no description -
+\end{parameter}
+
+% --- only_generate_xtk_temp --- %
+\begin{parameter}{
+    name    = {only_generate_xtk_temp},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- output_cut_ig_mesh --- %
+\begin{parameter}{
+    name    = {output_cut_ig_mesh},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- output_file --- %
+\begin{parameter}{
+    name    = {output_file},
+    default = {"xtk_temp.exo"},
+}
+- no description -
+\end{parameter}
+
+% --- output_intersection_mesh --- %
+\begin{parameter}{
+    name    = {output_intersection_mesh},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- output_path --- %
+\begin{parameter}{
+    name    = {output_path},
+    default = {"./"},
+}
+- no description -
+\end{parameter}
+
+% --- potential_phases_in_contact --- %
+\begin{parameter}{
+    name    = {potential_phases_in_contact},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- print_enriched_ig_mesh --- %
+\begin{parameter}{
+    name    = {print_enriched_ig_mesh},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- print_memory --- %
+\begin{parameter}{
+    name    = {print_memory},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- probe_bg_cells --- %
+\begin{parameter}{
+    name    = {probe_bg_cells},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- sort_basis_enrichment_levels --- %
+\begin{parameter}{
+    name    = {sort_basis_enrichment_levels},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- triangulate_all --- %
+\begin{parameter}{
+    name    = {triangulate_all},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- triangulate_all_in_post --- %
+\begin{parameter}{
+    name    = {triangulate_all_in_post},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- unenriched_mesh_indices --- %
+\begin{parameter}{
+    name    = {unenriched_mesh_indices},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- union_block_colors --- %
+\begin{parameter}{
+    name    = {union_block_colors},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- union_block_names --- %
+\begin{parameter}{
+    name    = {union_block_names},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- union_blocks --- %
+\begin{parameter}{
+    name    = {union_blocks},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- union_side_set_colors --- %
+\begin{parameter}{
+    name    = {union_side_set_colors},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- union_side_set_names --- %
+\begin{parameter}{
+    name    = {union_side_set_names},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- union_side_sets --- %
+\begin{parameter}{
+    name    = {union_side_sets},
+    default = {""},
+}
+- no description -
+\end{parameter}
+
+% --- use_SPG_based_enrichment --- %
+\begin{parameter}{
+    name    = {use_SPG_based_enrichment},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- verbose --- %
+\begin{parameter}{
+    name    = {verbose},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- verbose_level --- %
+\begin{parameter}{
+    name    = {verbose_level},
+    default = {moris::uint( 0 )},
+}
+- no description -
+\end{parameter}
+
+% --- visualize_cell_association --- %
+\begin{parameter}{
+    name    = {visualize_cell_association},
+    default = {true},
+}
+- no description -
+\end{parameter}
+
+% --- visualize_ghost --- %
+\begin{parameter}{
+    name    = {visualize_ghost},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- volume_fraction --- %
+\begin{parameter}{
+    name    = {volume_fraction},
+    default = {1.0},
+}
+- no description -
+\end{parameter}
+
+% --- write_basis_functions --- %
+\begin{parameter}{
+    name    = {write_basis_functions},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- write_bspline_cluster_info --- %
+\begin{parameter}{
+    name    = {write_bspline_cluster_info},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- write_cell_enrichments_levels --- %
+\begin{parameter}{
+    name    = {write_cell_enrichments_levels},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- write_cluster_measures_to_exo --- %
+\begin{parameter}{
+    name    = {write_cluster_measures_to_exo},
+    default = {true},
+}
+- no description -
+\end{parameter}
+
+% --- write_enrichment_fields --- %
+\begin{parameter}{
+    name    = {write_enrichment_fields},
+    default = {false},
+}
+- no description -
+\end{parameter}
+
+% --- write_enrichment_fields_probe_spheres --- %
+\begin{parameter}{
+    name    = {write_enrichment_fields_probe_spheres},
+    default = {""},
+}
+- no description -
+\end{parameter}
+

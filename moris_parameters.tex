@@ -1,14 +1,88 @@
-\documentclass{scrartcl}
+\documentclass{scrreprt}
+
+\usepackage{todonotes}
+\setuptodonotes{inline}
+\usepackage{biblatex}
+\addbibresource{literature/literature.bib}
+
+\title{Moris Parameter}
+\subtitle{Documentation}
+\date{\today}
+\author{Everyone}
 
 \usepackage{parameter}
-
-\usepackage[colorlinks]{hyperref}
 \makeindex
+
+\usepackage{xspace}
+\NewDocumentCommand{\moris}{}{\textsf{Moris}\xspace}
+
 \begin{document}
+\maketitle
+\tableofcontents
+\listoftodos
 
-\section{Parameter Classes}
-\subsection{HMR - Hierarchical Mesh Refinement}
-\input{sections/hmr.tex}
 
+% \chapter{FEM}
+% \section{General}
+% \section{Parameters}
+% \input{parameters/fem.tex}
+
+% \chapter{GEN}
+% \section{General}
+% \section{Parameters}
+% \input{parameters/gen.tex}
+
+% \chapter{HMR - Hierarchical Mesh Refinement}
+% \section{General}
+% \input{sections/hmr_general.tex}
+% \section{Parameters}
+\input{parameters/hmr.tex}
+
+% \chapter{MIG}
+% \section{General}
+% \section{Parameters}
+% \input{parameters/mig.tex}
+
+% \chapter{MORIS}
+% \section{General}
+% \section{Parameters}
+% \input{parameters/moris.tex}
+
+% \chapter{MSI}
+% \section{General}
+% \section{Parameters}
+% \input{parameters/msi.tex}
+
+% \chapter{OPT}
+% \section{General}
+% \section{Parameters}
+% \input{parameters/opt.tex}
+
+% \chapter{SOL}
+% \section{General}
+% \section{Parameters}
+% \input{parameters/sol.tex}
+
+% \chapter{STK}
+% \section{General}
+% \section{Parameters}
+% \input{parameters/stk.tex}
+
+% \chapter{VIS}
+% \section{General}
+% \section{Parameters}
+% \input{parameters/vis.tex}
+
+% \chapter{WRK}
+% \section{General}
+% \section{Parameters}
+% \input{parameters/wrk.tex}
+
+% \chapter{XTK}
+% \section{General}
+% \section{Parameters}
+% \input{parameters/xtk.tex}
+
+\printbibliography
 \printindex
 \end{document}
